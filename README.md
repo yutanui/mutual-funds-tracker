@@ -17,6 +17,11 @@ A full-stack application to track and manage mutual funds investments with real-
 - React Hook Form + Zod
 - Responsive Mobile Design
 
+### Development Tools
+- pnpm - Fast, disk space efficient package manager
+- Biome - Fast linter and formatter for JavaScript/TypeScript
+- Git - Version control
+
 ## Project Structure
 
 ```
@@ -81,9 +86,20 @@ pnpm run dev:frontend
 
 ### Available Scripts
 
+**Development:**
 - `pnpm run install:all` - Install all dependencies
 - `pnpm run dev` - Run both backend and frontend
 - `pnpm run build` - Build both applications
+
+**Linting & Formatting (Biome):**
+- `pnpm run lint` - Check for lint errors
+- `pnpm run lint:fix` - Fix lint errors automatically
+- `pnpm run format` - Check code formatting
+- `pnpm run format:fix` - Format code automatically
+- `pnpm run check` - Run both linting and formatting checks
+- `pnpm run check:fix` - Fix both linting and formatting issues
+
+**Docker:**
 - `pnpm run docker:up` - Start PostgreSQL container
 - `pnpm run docker:down` - Stop PostgreSQL container
 - `pnpm run docker:logs` - View database logs
