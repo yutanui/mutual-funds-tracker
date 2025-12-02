@@ -31,60 +31,62 @@ mutual-funds-tracker/
 
 ### Prerequisites
 - Node.js >= 18.0.0
-- npm >= 9.0.0
+- pnpm >= 8.0.0
 - Docker & Docker Compose
 
 ### Installation
 
-1. Install root dependencies:
+1. Install pnpm globally (if not already installed):
 ```bash
-npm install
+npm install -g pnpm
 ```
 
-2. Install backend dependencies:
+2. Install all dependencies:
 ```bash
-npm run install:backend
+pnpm run install:all
 ```
 
-3. Install frontend dependencies:
+Or install separately:
 ```bash
-npm run install:frontend
-```
+# Install root dependencies
+pnpm install
 
-Or install all at once:
-```bash
-npm run install:all
+# Install backend dependencies
+pnpm run install:backend
+
+# Install frontend dependencies
+pnpm run install:frontend
 ```
 
 ### Running the Application
 
 1. Start PostgreSQL database:
 ```bash
-npm run docker:up
+pnpm run docker:up
 ```
 
 2. Run both backend and frontend in development mode:
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Or run them separately:
 ```bash
 # Terminal 1 - Backend
-npm run dev:backend
+pnpm run dev:backend
 
 # Terminal 2 - Frontend
-npm run dev:frontend
+pnpm run dev:frontend
 ```
 
 ### Available Scripts
 
-- `npm run install:all` - Install all dependencies
-- `npm run dev` - Run both backend and frontend
-- `npm run build` - Build both applications
-- `npm run docker:up` - Start PostgreSQL container
-- `npm run docker:down` - Stop PostgreSQL container
-- `npm run docker:logs` - View database logs
+- `pnpm run install:all` - Install all dependencies
+- `pnpm run dev` - Run both backend and frontend
+- `pnpm run build` - Build both applications
+- `pnpm run docker:up` - Start PostgreSQL container
+- `pnpm run docker:down` - Stop PostgreSQL container
+- `pnpm run docker:logs` - View database logs
 
 ## Features
 
