@@ -119,6 +119,63 @@ pnpm run dev:frontend
 
 See `.env.example` files in backend and frontend directories for required configuration.
 
+### Backend Environment Variables
+
+Copy the example file and configure:
+```bash
+cp backend/.env.example backend/.env
+```
+
+Required variables:
+- `PORT` - Backend server port (default: 3000)
+- `NODE_ENV` - Environment mode (development/production)
+- `FRONTEND_URL` - Frontend URL for CORS (default: http://localhost:5173)
+- `DB_HOST` - PostgreSQL host (default: localhost)
+- `DB_PORT` - PostgreSQL port (default: 5432)
+- `DB_USERNAME` - Database username (default: postgres)
+- `DB_PASSWORD` - Database password (default: postgres)
+- `DB_DATABASE` - Database name (default: mutual_funds_tracker)
+
+## Database Setup
+
+The project uses PostgreSQL via Docker Compose.
+
+### Starting the Database
+
+```bash
+pnpm run docker:up
+```
+
+This will:
+- Pull PostgreSQL 16 Alpine image
+- Create a container named `mutual-funds-postgres`
+- Expose port 5432
+- Create a persistent volume for data
+- Set up health checks
+
+### Stopping the Database
+
+```bash
+pnpm run docker:down
+```
+
+### Viewing Database Logs
+
+```bash
+pnpm run docker:logs
+```
+
+### Database Connection Details
+
+When running via Docker Compose:
+- Host: `localhost`
+- Port: `5432`
+- Database: `mutual_funds_tracker`
+- Username: `postgres`
+- Password: `postgres`
+
+**Note:** The database credentials above are for development only. Use strong passwords in production.
+
 ## API Documentation
 
 Once the backend is running, access Swagger documentation at:
